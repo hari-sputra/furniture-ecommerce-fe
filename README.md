@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Furniture E-commerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a modern, feature-rich furniture e-commerce platform. It provides a seamless shopping experience for customers and a comprehensive dashboard for administrators to manage products, orders, and customers.
 
-Currently, two official plugins are available:
+This application is built with React and communicates with a backend service via gRPC for high-performance API calls.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+### Customer View
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Product Catalog:** Browse and search for furniture products.
+- **Shopping Cart:** Add products to a cart and manage them.
+- **Checkout:** Secure checkout process.
+- **User Authentication:** Register, log in, and manage user profiles.
+- **Order History:** View past orders and their statuses.
+- **Responsive Design:** Fully responsive for browsing on any device.
 
-- Configure the top-level `parserOptions` property like this:
+### Admin Dashboard
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Dashboard:** At-a-glance view of key e-commerce metrics.
+- **Product Management:** Create, update, and delete products.
+- **Order Management:** View and manage customer orders.
+- **Customer Management:** View and manage the customer list.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Tech Stack
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Framework:** [React](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **API Communication:** [gRPC-web](https://github.com/grpc/grpc-web) with [Protocol Buffers](https://developers.google.com/protocol-buffers)
+- **Routing:** [React Router](https://reactrouter.com/)
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand)
+- **Styling:** [Bootstrap](https://getbootstrap.com/)
+- **Form Management:** [React Hook Form](https://react-hook-form.com/)
+- **Linting:** [ESLint](https://eslint.org/)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [npm](https://www.npmjs.com/)
+
+### Installation & Setup
+
+1. **Clone the repository from GitHub:**
+
+   ```sh
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. **Install the dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root of the project and add any necessary environment variables, such as the backend API endpoint.
+
+   ```env
+   VITE_API_BASE_URL=http://localhost:8080
+   ```
+
+4. **Run the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+
+## Available Scripts
+
+In the project directory, you can run the following commands:
+
+- `npm run dev`: Runs the app in development mode.
+- `npm run build`: Builds the app for production to the `dist` folder.
+- `npm run lint`: Lints the codebase using ESLint.
+- `npm run preview`: Serves the production build locally to preview it.
